@@ -1,9 +1,9 @@
-defmodule PaymentsApi.MixProject do
+defmodule Payment.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :paymentsApi,
+      app: :payment,
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule PaymentsApi.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {PaymentsApi.Application, []},
+      mod: {Payment.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -42,7 +42,8 @@ defmodule PaymentsApi.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
     ]
   end
 

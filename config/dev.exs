@@ -1,10 +1,10 @@
 use Mix.Config
 
 # Configure your database
-config :paymentsApi, PaymentsApi.Repo,
+config :payment, Payment.Repo,
   username: "postgres",
   password: "postgres",
-  database: "paymentsapi_dev",
+  database: "payment_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,7 +15,7 @@ config :paymentsApi, PaymentsApi.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :paymentsApi, PaymentsApiWeb.Endpoint,
+config :payment, PaymentWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,

@@ -1,4 +1,4 @@
-defmodule PaymentsApiWeb.ChannelCase do
+defmodule PaymentWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -11,7 +11,7 @@ defmodule PaymentsApiWeb.ChannelCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use PaymentsApiWeb.ChannelCase, async: true`, although
+  by setting `use PaymentWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -21,18 +21,18 @@ defmodule PaymentsApiWeb.ChannelCase do
     quote do
       # Import conveniences for testing with channels
       import Phoenix.ChannelTest
-      import PaymentsApiWeb.ChannelCase
+      import PaymentWeb.ChannelCase
 
       # The default endpoint for testing
-      @endpoint PaymentsApiWeb.Endpoint
+      @endpoint PaymentWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PaymentsApi.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Payment.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PaymentsApi.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Payment.Repo, {:shared, self()})
     end
 
     :ok

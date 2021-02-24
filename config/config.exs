@@ -7,16 +7,16 @@
 # General application configuration
 use Mix.Config
 
-config :paymentsApi,
-  ecto_repos: [PaymentsApi.Repo]
+config :payment,
+  ecto_repos: [Payment.Repo]
 
 # Configures the endpoint
-config :paymentsApi, PaymentsApiWeb.Endpoint,
+config :payment, PaymentWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "z/BAqmSXxUc/67SoTxK17ZSvsLO32ADyVkjekvUp85+4N8zpp5C76LvwMpsFekHo",
-  render_errors: [view: PaymentsApiWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: PaymentsApi.PubSub,
-  live_view: [signing_salt: "R4SQOqk7"]
+  secret_key_base: "Z3hldP035ePjKIpzv2yUeD6dP6Y0j2wALmFUcn+rx1VMyj2xgQmTELg/8qtuRX04",
+  render_errors: [view: PaymentWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: Payment.PubSub,
+  live_view: [signing_salt: "N+WrTY2U"]
 
 # Configures Elixir's Logger
 config :logger, :console,

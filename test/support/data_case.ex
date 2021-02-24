@@ -1,4 +1,4 @@
-defmodule PaymentsApi.DataCase do
+defmodule Payment.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule PaymentsApi.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use PaymentsApi.DataCase, async: true`, although
+  by setting `use Payment.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule PaymentsApi.DataCase do
 
   using do
     quote do
-      alias PaymentsApi.Repo
+      alias Payment.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import PaymentsApi.DataCase
+      import Payment.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PaymentsApi.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Payment.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PaymentsApi.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Payment.Repo, {:shared, self()})
     end
 
     :ok

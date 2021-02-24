@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(PaymentsApi.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(Payment.Repo, :manual)
